@@ -11,7 +11,9 @@ excluded_domains = [
     "binance.com",
     "example.com",
     "googletagmanager.com",
-    "pinterest.com"
+    "pinterest.com",
+    "schema.org",
+    "googlesyndication.com"
 ]
 
 # Fetch the page content
