@@ -158,8 +158,6 @@ https://ogp.me/ns#
 https://ojisama.dietpc.org/
 https://only-shooting-stars-breakthe.moldeo.org/
 https://packetyo.nanbang.com.tr/
-https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9601708977003090
-https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9601708977003090&amp;host=ca-host-pub-2644536267352236
 https://passwordforlockedstellarisabc.charbel.cl/
 https://peepeepod.odoobooks.com/
 https://peepod.meicosoft.com/
@@ -200,9 +198,6 @@ https://read.coach.ratnikov.com/
 https://recap.utopia.menorahscrazyblog.com/
 https://research.africa.com/
 https://rhp.ilove4ndan.com/
-https://schema.org
-https://schema.org/Blog
-https://schema.org/WPHeader
 https://school.pepikutan.net/
 https://schoolnotes.followork.net/
 https://schoolnotes.h0rst.us/
