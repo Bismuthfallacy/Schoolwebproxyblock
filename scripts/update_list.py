@@ -1,42 +1,20 @@
 import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
+import re
 
-TARGET_URL = 'https://schoolwebproxy.com/1000-proxies-for-school-chromebook-2025/'  # Replace with the actual URL
-OUTPUT_FILE = 'proxies.txt'
+# URL of the proxy list page
+url = "https://schoolwebproxy.com/1000-proxies-for-school-chromebook-2025/"
 
-def fetch_links():
-    response = requests.get(TARGET_URL)
-    soup = BeautifulSoup(response.text, 'html.parser')
+# Fetch the page content
+response = requests.get(url)
+text = response.text
 
-    # Adjust the logic here for your specific site
-    links = [a['href'] for a in soup.find_all('a', href=True) if 'http' in a['href']]
-    return set(links)
+# Extract all URLs starting with https://, excluding stuff in tags or with line breaks
+proxy_links = re.findall(r'https://[^\s"<>\n]+', text)
 
-def load_existing():
-    try:
-        with open(OUTPUT_FILE, 'r') as f:
-            return set(line.strip() for line in f if line.strip() and not line.startswith('#'))
-    except FileNotFoundError:
-        return set()
+# Remove duplicates and sort
+proxy_links = sorted(set(proxy_links))
 
-def save_links(links):
-    timestamp = datetime.utcnow().isoformat() + 'Z'
-    with open(OUTPUT_FILE, 'w') as f:
-        f.write(f"# Last updated: {timestamp}\n")
-        for link in sorted(links):
-            f.write(link + '\n')
-
-def main():
-    new_links = fetch_links()
-    existing_links = load_existing()
-    combined = existing_links.union(new_links)
-
-    if combined != existing_links:
-        save_links(combined)
-        print(f"Added {len(combined - existing_links)} new links.")
-    else:
-        print("No new links found.")
-
-if __name__ == '__main__':
-    main()
+# Write to the file at the root of the repo
+with open("proxies.txt", "w") as f:
+    for link in proxy_links:
+        f.write(link + "\n")
