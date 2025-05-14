@@ -13,6 +13,10 @@ excluded_domains = [
     "googletagmanager.com",
     "pinterest.com",
     "schema.org",
+    "clarity.ms",
+    "api.w.org",
+    "cdn.onesignal.com",
+    "ogp.me",
     "googlesyndication.com"
 ]
 
