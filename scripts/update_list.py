@@ -17,6 +17,7 @@ excluded_domains = [
     "api.w.org",
     "cdn.onesignal.com",
     "ogp.me",
+    "discord.com",
     "googlesyndication.com"
 ]
 
